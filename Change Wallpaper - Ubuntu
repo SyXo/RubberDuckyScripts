@@ -1,0 +1,13 @@
+REM Rubber Ducky script changing wallpaper on Ubuntu by Floczii
+DELAY 2000
+ALT F2
+DELAY 1000
+REM ALT+F2 runs a command, here we start terminal
+STRING gnome-terminal
+ENTER
+DELAY 500
+REM One line command to create a powershell function to change wallpaper, then call it
+REM Don't forget to change path to the picture, which will be saved in Downloads folder
+STRING cd ~ ; curl https://LinkToPicture > setWPRD.jpg ; dconf write "/org/gnome/desktop/background/picture-uri" "'setWPRD.jpg'" ; exit
+DELAY 100
+ENTER
