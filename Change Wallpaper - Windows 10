@@ -1,5 +1,5 @@
 REM Rubber Ducky script changing wallpaper on windows 10 by Floczii
-DELAY 1500
+DELAY 2000
 GUI r
 DELAY 300
 REM We have to launch powershell, because the command is too long for only GUI+R
